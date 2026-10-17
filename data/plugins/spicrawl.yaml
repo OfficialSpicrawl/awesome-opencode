@@ -1,0 +1,24 @@
+name: Spicrawl
+repo: https://github.com/OfficialSpicrawl/agent-plugins/tree/main/opencode
+tagline: Web scraping for OpenCode agents. Pages to Markdown or JSON, batch jobs, login sessions.
+description: Adds the hosted Spicrawl MCP server to OpenCode so agents can scrape any URL to clean Markdown or JSON (including JavaScript pages), extract fields with CSS selectors, run batch jobs over lists of URLs, keep logged-in sessions, and check request history and usage. Needs a Spicrawl API key; the free plan includes 1,000 credits a month.
+scope:
+  - global
+  - project
+tags:
+  - web-scraping
+  - mcp
+  - markdown
+homepage: https://docs.spicrawl.com/agents/opencode
+installation: |
+  1. Create an API key at [app.spicrawl.com](https://app.spicrawl.com) and export it where OpenCode runs: `export SPICRAWL_API_KEY=spicrawl_live_...`
+  2. Add the plugin to `opencode.json` (project) or `~/.config/opencode/opencode.json` (global):
+
+  ```json
+  {
+    "$schema": "https://opencode.ai/config.json",
+    "plugin": ["opencode-spicrawl"]
+  }
+  ```
+
+  OpenCode installs `opencode-spicrawl` from npm on start; `opencode mcp list` should show `spicrawl` as `connected`.
